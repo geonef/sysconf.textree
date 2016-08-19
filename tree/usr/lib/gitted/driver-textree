@@ -41,7 +41,7 @@ gitted_driver_status_code() {
         return 7 # 7=deletion
     fi
 
-    [ $GITTED_CONFIG_STATE_COMMIT = $GITTED_NULL_SHA1 ] && return 6      # 6=addition
+    [ $GITTED_CONFIG_STATE_COMMIT = $GITTED_NULL_SHA1 ] && return 0  #6      # 6=addition
 
     [ $GITTED_CONFIG_STATE_COMMIT = "$_head" ] && return 0      # 0=clean
 
