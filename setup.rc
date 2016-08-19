@@ -10,7 +10,7 @@ _packages=
 _packages="$_packages ca-certificates memcached"
 
 # Install-time deps:
-_packages="$_packages build-essential python"
+_packages="$_packages build-essential python software-properties-common"
 
 if [ "$SYSCONF_TEXTREE_ENABLE_NGINX" != no ]; then
     # NginX
@@ -49,6 +49,11 @@ fi
 # npm config set proxy $http_proxy
 # npm config set https-proxy $shttp_proxy
 # npm config set strict-ssl=false
+
+if ! npm list textream -g >/dev/null; then
+    npm install textream -g \
+        || nef_fatal "could not install NPM module: Textream"
+fi
 
 ###
 # START doing things in share/textree
