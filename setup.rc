@@ -23,7 +23,7 @@ sysconf_require_packages $_packages
 if ! [ -r /etc/apt/sources.list.d/ubuntu-toolchain-r-test-trusty.list ]; then
     add-apt-repository ppa:ubuntu-toolchain-r/test
     apt-get update
-    apt-get install libstdc++-4.9-dev
+    sysconf_require_packages libstdc++-4.9-dev
 fi
 
 if ! [ -x /usr/bin/nodejs ]; then
