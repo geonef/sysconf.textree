@@ -18,13 +18,13 @@ if [ "$SYSCONF_TEXTREE_ENABLE_NGINX" != no ]; then
     _packages="$_packages bind9-host dnsutils"
 fi
 
+sysconf_require_packages $_packages
+
 if ! [ -r /etc/apt/sources.list.d/ubuntu-toolchain-r-test-trusty.list ]; then
     add-apt-repository ppa:ubuntu-toolchain-r/test
     apt-get update
     apt-get install libstdc++-4.9-dev
 fi
-
-sysconf_require_packages $_packages
 
 if ! [ -x /usr/bin/nodejs ]; then
     sh nodejs.install.sh \
