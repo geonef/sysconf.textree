@@ -27,6 +27,8 @@
 . /usr/share/gitted/shell-driver || exit 2
 
 # Settings / default
+GITTED_DRIVER_SUPPORTS_RESET=yes
+GITTED_DRIVER_SUPPORTS_COMMIT=no
 driver_head_file=${GITTED_CONFIG_TEXTREE_HEAD_FILE:-/var/lib/textree/HEAD}
 
 ################################################################################
